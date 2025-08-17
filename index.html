@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ART — Portfolio</title>
+  <link rel="preload" href="assets/hero.jpg" as="image">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <button id="menuBtn" aria-haspopup="true" aria-expanded="false" aria-controls="menuOverlay">menu</button>
+
+  <div id="menuOverlay" aria-hidden="true">
+    <nav aria-label="Main">
+      <button class="close" aria-label="Close menu" id="closeMenu">×</button>
+      <ul>
+        <li><a href="#home">home</a></li>
+        <li><a href="#about">about / bio</a></li>
+        <li><a href="#work">work portfolio</a></li>
+        <li><a href="#projects">projects / exhibitions</a></li>
+        <li><a href="#press">press / media</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main id="home" class="hero" role="banner" aria-label="Landing">
+    <div class="hero-inner">
+      <h1>ART</h1>
+      <p class="tagline">visual artist portfolio</p>
+    </div>
+  </main>
+
+  <!-- Minimal anchor sections (empty by default) -->
+  <section id="about" class="spacer" aria-label="About"></section>
+  <section id="work" class="spacer" aria-label="Work"></section>
+  <section id="projects" class="spacer" aria-label="Projects"></section>
+  <section id="press" class="spacer" aria-label="Press"></section>
+  <section id="contact" class="spacer" aria-label="Contact"></section>
+
+  <script src="script.js"></script>
+</body>
+</html>
