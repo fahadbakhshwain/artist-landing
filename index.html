@@ -1,84 +1,12 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Artist — Portfolio</title>
-<style>
-  :root{--bg:#0a0a0a;--fg:#f5f5f5;--accent:#2d5fff;--gap:20px}
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:system-ui,-apple-system,Inter,Arial,sans-serif;background:var(--bg);color:var(--fg);line-height:1.5}
-  /* header menu */
-  #menuBtn{position:fixed;top:16px;right:16px;border:1px solid #fff;background:transparent;color:#fff;padding:8px 12px;text-transform:lowercase;z-index:10;cursor:pointer}
-  #overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);display:grid;place-items:center;opacity:0;pointer-events:none;transition:.2s;z-index:9}
-  #overlay.open{opacity:1;pointer-events:auto}
-  #overlay ul{list-style:none;display:grid;gap:12px;text-align:center}
-  #overlay a{color:#fff;text-decoration:none;font-size:clamp(18px,3vw,28px)}
-  #overlay a:hover{color:var(--accent)}
-  /* hero */
-  .hero{min-height:100vh;display:grid;place-items:center;background:
-    linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.4)),
-    url('assets/hero.jpg') center/cover no-repeat}
-  .hero h1{font-weight:800;font-size:clamp(56px,18vw,220px);letter-spacing:-.03em;line-height:.9;text-align:center}
-  /* video block */
-  .wrap{padding:clamp(16px,4vw,48px)}
-  .video{max-width:1200px;margin:0 auto;border:1px solid rgba(255,255,255,.1)}
-  .video video{width:100%;height:auto;display:block}
-  /* gallery */
-  .grid{max-width:1400px;margin:clamp(16px,4vw,48px) auto;display:grid;gap:var(--gap);
-        grid-template-columns:repeat(3,1fr)}
-  .grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border:1px solid rgba(255,255,255,.08)}
-  @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:520px){.grid{grid-template-columns:1fr}}
-  /* footer */
-  footer{padding:40px 16px;border-top:1px solid rgba(255,255,255,.08);text-align:center;opacity:.7}
-</style>
-</head>
-<body>
-
-<button id="menuBtn">menu</button>
-<div id="overlay" aria-hidden="true">
-  <ul>
-    <li><a href="#home" onclick="closeMenu()">home</a></li>
-    <li><a href="#video" onclick="closeMenu()">video</a></li>
-    <li><a href="#gallery" onclick="closeMenu()">gallery</a></li>
-  </ul>
-</div>
-
-<main id="home" class="hero"><h1>ARTIST</h1></main>
-
-<section id="video" class="wrap">
-  <div class="video">
-    <!-- ارفع ملف v1.mp4 لاحقًا داخل assets أو ضَع رابطاً من يوتيوب -->
-    <video controls playsinline muted poster="assets/hero.jpg">
-      <source src="assets/v1.mp4" type="video/mp4"/>
-      <!-- بديل: ضع فيديو يوتيوب كتعليق توضيحي أسفل -->
-    </video>
-  </div>
-</section>
-
-<section id="gallery" class="grid">
-  <!-- ارفع 9 صور لاحقًا بأسماء g1.jpg .. g9.jpg داخل assets -->
-  <img src="assets/g1.jpg" alt="">
-  <img src="assets/g2.jpg" alt="">
-  <img src="assets/g3.jpg" alt="">
-  <img src="assets/g4.jpg" alt="">
-  <img src="assets/g5.jpg" alt="">
-  <img src="assets/g6.jpg" alt="">
-  <img src="assets/g7.jpg" alt="">
-  <img src="assets/g8.jpg" alt="">
-  <img src="assets/g9.jpg" alt="">
-</section>
-
-<footer>© Artist</footer>
-
-<script>
-  const o=document.getElementById('overlay'), b=document.getElementById('menuBtn');
-  function openMenu(){o.classList.add('open');o.setAttribute('aria-hidden','false')}
-  function closeMenu(){o.classList.remove('open');o.setAttribute('aria-hidden','true')}
-  b.addEventListener('click', ()=> o.classList.contains('open')?closeMenu():openMenu());
-  o.addEventListener('click', e=>{ if(e.target===o) closeMenu(); });
-  document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeMenu(); });
-</script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Artist Landing</title>
+  </head>
+  <body class="bg-neutral-50">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
