@@ -113,5 +113,24 @@ body {
   min-height: 25svh;
   border-top: 1px solid rgba(255,255,255,0.08);
 }
+/* --- simple grid for 6 web + 6 graphic --- */
+.grid { padding: var(--safe); background: var(--bg); }
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 4 / 3;   /* يحافظ على شكل موحد */
+  object-fit: cover;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+@media (max-width: 800px) {
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+}
+
 /* Prevent background scroll when menu open */
 .body-lock { overflow: hidden; }
